@@ -77,6 +77,8 @@
         letter-spacing: 4%;
         color: $secondary-color;
 
+        @include hover(color, var(--color));
+
         &::after {
           content: '';
           position: absolute;

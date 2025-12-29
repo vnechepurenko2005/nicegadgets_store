@@ -17,37 +17,38 @@ import {
 import { Product } from '../../types/Product';
 
 const colorMap: Record<string, string> = {
-  black: '#000000',
-  green: '#394C38',
-  blue: '#9FB3C6',
-  yellow: '#FCEBD3',
-  white: '#F0F0F0',
-  purple: '#E6DFEB',
-  red: '#BF0013',
-  pink: '#FADDD7',
-  gold: '#F6E7CE',
-  silver: '#D8D9DA',
+  black: '#201D24',
+  green: '#364935',
+  blue: '#215E7C',
+  yellow: '#f3d060',
+  white: '#FBF7F4',
+  purple: '#B8AFE6',
+  red: '#A50011',
+  pink: '#FAE0D8',
+  gold: '#F9E5C9',
+  silver: '#F5F5F0',
   grey: '#535150',
-  'space-gray': '#4E4D4A',
-  spacegray: '#4E4D4A',
-  'space gray': '#4E4D4A',
-  midnightgreen: '#4E5851',
-  midnight: '#191F26',
-  starlight: '#FBF7F4',
-  roseGold: '#E6C7C2',
-  coral: '#FF7F50',
-  deeppurple: '#493C4D',
-  'deep purple': '#493C4D',
-  'deep-purple': '#493C4D',
-  'space-black': '#282829',
-  spaceblack: '#282829',
-  'space black': '#282829',
-  alpinegreen: '#3E4942',
-  'alpine-green': '#3E4942',
-  'alpine green': '#3E4942',
+  'space-gray': '#535150',
+  spacegray: '#535150',
+  'space gray': '#535150',
+  midnightgreen: '#4e5851',
+  midnight: '#171E27',
+  starlight: '#F9F3EE',
+  roseGold: '#fad7bd',
+  coral: '#ee7762',
+  deeppurple: '#594F63',
+  'deep purple': '#594F63',
+  'deep-purple': '#594F63',
+  'space-black': '#403E3D',
+  spaceblack: '#403E3D',
+  'space black': '#403E3D',
+  alpinegreen: '#505F4E',
+  'alpine-green': '#505F4E',
+  'alpine green': '#505F4E',
   sierrablue: '#9BB5CE',
   'sierra blue': '#9BB5CE',
   'sierra-blue': '#9BB5CE',
+  graphite: '#5C5B57',
 };
 
 export const ProductDetailsPage: React.FC = () => {
@@ -65,6 +66,10 @@ export const ProductDetailsPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState('');
   const [selectedColor, setSelectedColor] = useState<string>();
   const [selectedCapacity, setSelectedCapacity] = useState<string>();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [productId]);
 
   const isFav = useAppSelector(state =>
     selectIsFavorite(state, product?.id || ''),
